@@ -4,8 +4,13 @@
 \alias{read_html_js}
 \title{Read javascript-generated HTML pages.}
 \usage{
-read_html_js(url, ..., .phantomjs = NULL, .phantom_session = NULL,
-  .simplify = FALSE)
+read_html_js(
+  url,
+  ...,
+  .phantomjs = NULL,
+  .phantom_session = NULL,
+  .simplify = FALSE
+)
 }
 \arguments{
 \item{url}{[character vector] the url whose HTML to download and parse}
@@ -53,7 +58,7 @@ html_nodes(html_nojs, "li:nth-child(5)")[[2]]
 # {xml_node}
 # <li>
 #   [1] <strong>Email</strong>
-#   [2] <script>\\nvar e='3E612F3C6B753B45327823266F633B453278232661696D6568776572623B30347823266F666E693E226B753B45327823266F633B45327823267473696C206E6F20676E697473696C2072756F792077617 ...
+#   [2] <script>\nvar e='3E612F3C6B753B45327823266F633B453278232661696D6568776572623B30347823266F666E693E226B753B45327823266F633B45327823267473696C206E6F20676E697473696C2072756F792077617 ...
 
 html_js <- read_html_js(url)
 html_nodes(html_js, "li:nth-child(5)")[[2]]
@@ -62,7 +67,7 @@ html_nodes(html_js, "li:nth-child(5)")[[2]]
 # {xml_node}
 # <li>
 # [1] <strong>Email</strong>
-# [2] <script>\\nvar e='3E612F3C6B753B45327823266F633B453278232661696D6568776572623B30347823266F666E693E226B753B45327823266F633B45327823267473696C206E6F20676E697473696C2072756F792077617 ...
+# [2] <script>\nvar e='3E612F3C6B753B45327823266F633B453278232661696D6568776572623B30347823266F666E693E226B753B45327823266F633B45327823267473696C206E6F20676E697473696C2072756F792077617 ...
 # [3] <a href="mailto:info@brewhemia.co.uk?subject=I\%20saw\%20your\%20listing\%20on\%20list.co.uk">info@brewhemia.co.uk</a>
 
 # Passing a PhantomJS process gives the same result, but is faster. This is
